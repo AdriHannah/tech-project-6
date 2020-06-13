@@ -1,2 +1,2 @@
-# tech-prokect-6
+# tech-project-6
  Game Show App
