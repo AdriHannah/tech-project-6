@@ -5,12 +5,12 @@ const overlay = document.getElementById('overlay');
 let missed = 0;
 
 
-let phrases = ["MY PRECIOUS",
-    "JUST KEEP SWIMMING",
-    "WHY SO SERIOUS",
-    "NOBODY PUTS BABY IN A CORNER",
-    "TO INFINITY AND BEYOND",
-    "MAY THE FORTH BE WITH YOU"
+let phrases = ["my precious",
+    "just keep swimming",
+    "why so serious",
+    "nobody puts baby in the corner",
+    "to infinity and beyond",
+    "may the forth be with you"
 ]
 
 // listen for the start game button to be pressed 
@@ -25,7 +25,6 @@ function getRandomPhrasesAsArray(arr) {
     return word;
 };
 const phraseArray = getRandomPhrasesAsArray(phrases)
-
 
 // adds the letters of a string to the display
 // loop through phrase array
@@ -45,19 +44,38 @@ function addPhraseToDisplay(arr) {
 }
 addPhraseToDisplay(phraseArray);
 
-
 // // check if a letter is in the phrase 
 function checkLetter(button) {
-
+    const lis = document.querySelectorAll('.letter');
+    let match = null
+    for (let i = 0; i < lis.length; i++) {
+        if (button.textContent.toUpperCase() == lis[i].textContent.toUpperCase()) {
+            lis[i].className += 'show';
+            match = button.textContent;
+        }
+    }
+    return console.log(match);
 }
- 
+
+
+// // listen for the onscreen keyboard to be clicked 
+qwerty.addEventListener('click', (event) => {
+    const button = event.target;
+    const letterFound = checkLetter(button);
+
+    if (event.target.tagName == 'button') {
+        button.className += 'chosen';
+        button.disabled = 'true';
+
+        if (event.target.className !== 'chosen') {
+            letterFound == null;
+            const tries = document.getElementById('scoreboard');
+            tries.removeChild(tries.firstChild);
+            missed ++;
+        }
+    }
+});
+
 // check if the game has been won or lost 
 // const checkWin = () => {
-
 // }
-
-// listen for the onscreen keyboard to be clicked 
-// qwerty.addEventListener('click', () => {
-
-  
-// });
