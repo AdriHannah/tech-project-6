@@ -96,7 +96,6 @@ function checkWin() {
             lose.style.display = 'flex';
             title.textContent = 'You lost!';
             startButton.textContent = 'Try Again';
-
         }
     }
 }
@@ -121,9 +120,21 @@ function resetGame() {
 
     //bring back hearts
     const heartsRow = document.querySelectorAll('#scoreboard ol li');
-    for (let i = 0; i < heartsRow.length; i++) {
-        let imgHeart = heartsRow[i].getElementsByTagName('img');
-        imgHeart.src = "images/liveHeart.png";
+    const missingHeart = 5 - heartsRow.length;
+    
+    if (missingHeart > 0) {
+
+        for (let i = 0; i < missingHeart; i++) {
+            let heartLi = document.createElement('li');
+            let heartImg = document.createElement('img');
+            heartImg.src = "images/liveHeart.png";
+            // add size
+            heartImg.width = "30";
+            heartImg.height = "35";
+            heartLi.classList.add('tries');
+            heartLi.appendChild(heartImg);
+            tries.appendChild(heartLi);
+        }
     }
     missed = 0;
 }
