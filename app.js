@@ -31,7 +31,6 @@ function getRandomPhrasesAsArray(arr) {
 // loop through phrase array
 // create li elements and add class(name)
 function addPhraseToDisplay(arr) {
-    //const ul = document.querySelector('#phrase ul');
     for (let i = 0; i < arr.length; i++) {
         const li = document.createElement('li');
         li.textContent = arr[i];
