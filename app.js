@@ -71,6 +71,7 @@ qwerty.addEventListener('click', (event) => {
         } else {
             console.log("letter found")
             button.classList.add('chosen');
+            
             // css transition??
         }
         button.disabled = true;
@@ -131,6 +132,7 @@ function resetGame() {
             // add size
             heartImg.width = "30";
             heartImg.height = "35";
+            // add class
             heartLi.classList.add('tries');
             heartLi.appendChild(heartImg);
             tries.appendChild(heartLi);
