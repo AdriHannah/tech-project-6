@@ -11,7 +11,9 @@ let phrases = ["my precious",
     "why so serious",
     "nobody puts baby in the corner",
     "to infinity and beyond",
-    "may the force be with you"
+    "may the force be with you", 
+    "wax on wax off",
+    "et phone home" 
 ]
 
 // listen for the start game button to be pressed 
@@ -71,7 +73,7 @@ qwerty.addEventListener('click', (event) => {
         } else {
             console.log("letter found")
             button.classList.add('chosen');
-            
+
             // css transition??
         }
         button.disabled = true;
