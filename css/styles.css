@@ -9,6 +9,7 @@
   --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
+  --color-neutral-wrong: orange;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
@@ -109,6 +110,10 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
+}
+
+.wrongLetter{
+  background: var(--color-neutral-wrong);
 }
 
 .btn__reset {
